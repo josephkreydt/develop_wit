@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<!-- To Do List
+X change to a random image each time button is clicked
+X might have to change the code a bit so that images load faster/before the page loads
+- keep count of the number of times the button is clicked
+- add a button to reset the counter
+- start a timer on first button click
+- add list of image credits
+-->
+
+<head>
+	<title>
+		Develop Wit
+	</title>
+	<style>
+
+		/* Set display to none for image*/
+		#image {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>A tool for developing rhetorical wit.</h3>
+	<p>Click the "Show Person" button to show a picture. As fast as you can, think of something you would
+		say to the person. Consider his/her surroundings, jewelry, clothing, etc. If you get an image multiple
+		times, build up a mental collection of things you can say to someone every time you see him/her in
+		that particular scenario.</p>
+	<button type="button" onclick="showRandomImage()" id="btnID">
+		Show Person
+	</button>
+
+	<div>
+		<img id="image" src="../assets/develop_wit/develop_wit_1.jpg" alt="FLOWERS!" />
+	</div>
+
+	<script>
+		function showRandomImage() {
+			min = Math.ceil(1);
+			max = Math.floor(103);
+			imageNumber = Math.floor(Math.random() * (max - min) + min);
+
+			document.getElementById('image')
+					.style.display = "block"
+			document.getElementById('image')
+					.src="../assets/develop_wit/develop_wit_" + imageNumber + ".jpg";
+
+			console.log(imageNumber);
+		}
+	</script>
+</body>
+
+</html>
